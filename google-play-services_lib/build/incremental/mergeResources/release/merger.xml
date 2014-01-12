@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/home/ludwang/AndroidStudioProjects/MyApplicationProject/google-play-services_lib/src/main/res" />
+        <source path="/home/ludwang/AndroidStudioProjects/MyApplicationProject/google-play-services_lib/build/res/rs/release" />
+    </dataSet>
+    <dataSet config="release" >
+        <source path="/home/ludwang/AndroidStudioProjects/MyApplicationProject/google-play-services_lib/src/release/res" />
+    </dataSet>
+
+</merger>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="app_setting_click_behavior">
+        <item>Clip to clipboard</item>
+        <item>Send directly</item>
+    </array>
+
+    <array name="app_setting_click_behavior_value">
+        <item>CLIP</item>
+        <item>SEND</item>
+    </array>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:key="click_behavior"
+        android:title="default click behavior"
+        android:dialogTitle="test"
+        android:entries="@array/app_setting_click_behavior"
+        android:entryValues="@array/app_setting_click_behavior_value"
+        android:defaultValue="SEND" />
+
+</PreferenceScreen>

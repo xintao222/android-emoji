@@ -1,0 +1,20 @@
+<resources>
+
+    <array name="category">
+        <item>cry</item>
+        <item>smile</item>
+    </array>
+
+    <array name="smile_list">
+        <item>(*´Д`)つ))´∀`)</item>
+        <item>(^u^)</item>
+        <item>(*‘ v`*)</item>
+    </array>
+
+    <array name="cry_list">
+        <item>(〒︿〒)</item>
+        <item>｡ﾟヽ(ﾟ´Д`)ﾉﾟ｡</item>
+        <item>ヾ(;ﾟ;Д;ﾟ;)ﾉﾞ</item>
+    </array>
+
+</resources>

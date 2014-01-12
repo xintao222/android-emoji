@@ -1,0 +1,2 @@
+include ':MyApplication'
+include ':google-play-services_lib'
