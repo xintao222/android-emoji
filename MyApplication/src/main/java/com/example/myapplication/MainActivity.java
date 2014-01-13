@@ -40,40 +40,32 @@ public class MainActivity extends AbstractTabActivity implements CategoryFragmen
         ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         actionBar.setDisplayShowTitleEnabled(false);
-
-        Tab categoryTab = actionBar.newTab()
-                .setText(TabTags.CATEGORY)
-                .setTag(TabTags.CATEGORY)
-                .setTabListener(new TabListener<CategoryFragment>(this, tabView, FragmentTags.CATEGORY, CategoryFragment.class));
-        actionBar.addTab(categoryTab);
-
-        Tab historyTab = actionBar.newTab()
-                .setText(TabTags.HISTORY)
-                .setTag(TabTags.HISTORY)
-                .setTabListener(new TabListener<EmojiHistoryFragment>(this, tabView, FragmentTags.HISTORY, EmojiHistoryFragment.class));
-        actionBar.addTab(historyTab);
-
-        Tab latestTab = actionBar.newTab()
-                .setText(TabTags.LATEST)
-                .setTag(TabTags.LATEST)
-                .setTabListener(new TabListener<LatestEmojiFragment>(this, tabView, FragmentTags.LATEST, LatestEmojiFragment.class));
-        actionBar.addTab(latestTab);
+        actionBar.addTab(createTab(tabView, actionBar, TabTags.CATEGORY, FragmentTags.CATEGORY, CategoryFragment.class));
+        actionBar.addTab(createTab(tabView, actionBar, TabTags.HISTORY, FragmentTags.HISTORY, EmojiHistoryFragment.class));
+        actionBar.addTab(createTab(tabView, actionBar, TabTags.LATEST, FragmentTags.LATEST, LatestEmojiFragment.class));
 
         mAdView = new AdView(this);
         mAdView.setAdSize(AdSize.BANNER);
-        mAdView.setAdUnitId("myAdUnitId");
+        mAdView.setAdUnitId(getResources().getString(R.string.ad_unit_id));
         // Create an ad request.
         AdRequest.Builder adRequestBuilder = new AdRequest.Builder();
 
         // Optionally populate the ad request builder.
-        adRequestBuilder.addTestDevice(AdRequest.DEVICE_ID_EMULATOR);
+        adRequestBuilder.addTestDevice("FCA35BE16BC430A8FFA13D0F90FE18A7");
 
 
         LinearLayout adsView = (LinearLayout) findViewById(R.id.ads_view);
         adsView.addView(mAdView);
+        mAdView.loadAd(adRequestBuilder.build());
 
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+    }
+
+    private <T extends Fragment> Tab createTab(View tabView, ActionBar actionBar, String tabTag,
+                                               String fragmentTag, Class<T> fragmentClass) {
+        return actionBar.newTab()
+                .setText(tabTag)
+                .setTag(tabTag)
+                .setTabListener(new TabListener<T>(this, tabView, fragmentTag, fragmentClass));
     }
 
     @Override
