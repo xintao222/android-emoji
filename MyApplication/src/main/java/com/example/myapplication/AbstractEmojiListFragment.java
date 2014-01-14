@@ -56,11 +56,15 @@ public abstract class AbstractEmojiListFragment extends Fragment {
                 ClipboardManager clipboard = (ClipboardManager) view.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("emoji", item);
                 clipboard.setPrimaryClip(clip);
+                Intent startMain = new Intent(Intent.ACTION_MAIN);
+                startMain.addCategory(Intent.CATEGORY_HOME);
+                startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(startMain);
             }
         }
 
         private void updateCount(String emoji) {
-            EmojiHistoryDbHelper dbHelper = new EmojiHistoryDbHelper(getActivity().getBaseContext());
+            EmojiHistoryDbHelper dbHelper = EmojiHistoryDbHelper.getInstance(getActivity().getBaseContext());
             dbHelper.updateCount(emoji);
         }
     }

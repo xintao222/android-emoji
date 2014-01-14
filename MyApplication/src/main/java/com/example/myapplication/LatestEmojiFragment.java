@@ -9,7 +9,7 @@ public class LatestEmojiFragment extends AbstractEmojiListFragment {
 
     @Override
     protected List<String> getEmojiList() {
-        EmojiHistoryDbHelper dbHelper = new EmojiHistoryDbHelper(getActivity().getBaseContext());
+        EmojiHistoryDbHelper dbHelper = EmojiHistoryDbHelper.getInstance(getActivity().getBaseContext());
         return dbHelper.listLatestUsedEmoji();
     }
 }

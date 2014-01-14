@@ -4,8 +4,12 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.view.MenuItem;
 
 /**
+ * App设置的activity
+ * <p/>
  * Created by ludwang on 14-1-1.
  */
 public class SettingsActivity extends Activity {
@@ -13,7 +17,6 @@ public class SettingsActivity extends Activity {
     public static String CLICK_BEHAVIOR = "click_behavior";
 
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,5 +26,20 @@ public class SettingsActivity extends Activity {
                 .commit();
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    /**
+     * 实现navigation up的时候一定要override这个方法
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -8,13 +8,17 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import static com.example.myapplication.EmojiHistory.EmojiHistoryEntry.*;
 
 /**
+ * 数据库的辅助类
+ * <p/>
  * Created by ludwang on 14-1-9.
  */
 public class EmojiHistoryDbHelper extends SQLiteOpenHelper {
@@ -30,8 +34,20 @@ public class EmojiHistoryDbHelper extends SQLiteOpenHelper {
 
     private static final String SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " + TABLE_NAME;
 
-    public EmojiHistoryDbHelper(Context context) {
+    private EmojiHistoryDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    private static Map<Context, EmojiHistoryDbHelper> dbHelperMap = new HashMap<Context, EmojiHistoryDbHelper>();
+
+    public static EmojiHistoryDbHelper getInstance(Context context) {
+        EmojiHistoryDbHelper dbHelper = dbHelperMap.get(context);
+        if (dbHelper == null) {
+            dbHelper = new EmojiHistoryDbHelper(context);
+            dbHelperMap.put(context, dbHelper);
+            Log.w(EmojiHistoryDbHelper.class.getSimpleName(), "create EmojiHistoryDbHelper ");
+        }
+        return dbHelper;
     }
 
 
@@ -76,7 +92,7 @@ public class EmojiHistoryDbHelper extends SQLiteOpenHelper {
         return sortedHistory;
     }
 
-    public List<String> listLatestUsedEmoji(){
+    public List<String> listLatestUsedEmoji() {
         SQLiteDatabase db = this.getReadableDatabase();
         String[] projection = {EMOJI_VALUE, LATEST_DATE};
         String sortOrder = LATEST_DATE + " DESC";

@@ -3,16 +3,20 @@ package com.example.myapplication;
 import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.LinearLayout;
 
-import com.google.android.gms.ads.*;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.util.Arrays;
 import java.util.List;
@@ -39,25 +43,37 @@ public class MainActivity extends AbstractTabActivity implements CategoryFragmen
 
         ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayShowTitleEnabled(true);
         actionBar.addTab(createTab(tabView, actionBar, TabTags.CATEGORY, FragmentTags.CATEGORY, CategoryFragment.class));
         actionBar.addTab(createTab(tabView, actionBar, TabTags.HISTORY, FragmentTags.HISTORY, EmojiHistoryFragment.class));
         actionBar.addTab(createTab(tabView, actionBar, TabTags.LATEST, FragmentTags.LATEST, LatestEmojiFragment.class));
 
-        mAdView = new AdView(this);
-        mAdView.setAdSize(AdSize.BANNER);
-        mAdView.setAdUnitId(getResources().getString(R.string.ad_unit_id));
+        mAdView = (AdView) findViewById(R.id.adView);
+        mAdView.loadAd(getAdRequestBuilder().build());
+        setNotification();
+    }
+
+
+    private void setNotification() {
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
+                .setSmallIcon(R.drawable.ic_launcher)
+                .setContentTitle("Jun Wang")
+                .setContentText("Hello World!");
+        // Creates an explicit intent for an Activity in your app
+        Intent resultIntent = new Intent(this, MainActivity.class);
+        mBuilder.setContentIntent(PendingIntent.getActivity(getBaseContext(), 1, resultIntent, PendingIntent.FLAG_CANCEL_CURRENT));
+        NotificationManager mNotificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        // mId allows you to update the notification later on.
+        mNotificationManager.notify(11, mBuilder.build());
+    }
+
+    private AdRequest.Builder getAdRequestBuilder() {
         // Create an ad request.
         AdRequest.Builder adRequestBuilder = new AdRequest.Builder();
-
         // Optionally populate the ad request builder.
-        adRequestBuilder.addTestDevice("FCA35BE16BC430A8FFA13D0F90FE18A7");
-
-
-        LinearLayout adsView = (LinearLayout) findViewById(R.id.ads_view);
-        adsView.addView(mAdView);
-        mAdView.loadAd(adRequestBuilder.build());
-
+        adRequestBuilder.addTestDevice(getResources().getString(R.string.test_machine_id));
+        return adRequestBuilder;
     }
 
     private <T extends Fragment> Tab createTab(View tabView, ActionBar actionBar, String tabTag,
@@ -80,6 +96,12 @@ public class MainActivity extends AbstractTabActivity implements CategoryFragmen
         switch (item.getItemId()) {
             case R.id.action_settings:
                 startActivity(new Intent(this, SettingsActivity.class));
+                return true;
+            case R.id.back_home:
+                Intent startMain = new Intent(Intent.ACTION_MAIN);
+                startMain.addCategory(Intent.CATEGORY_HOME);
+                startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(startMain);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

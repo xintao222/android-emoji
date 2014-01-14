@@ -1,9 +1,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
-    
-    <item android:id="@+id/action_settings"
+
+    <item
+        android:id="@+id/action_settings"
         android:title="@string/action_settings"
-        android:showAsAction="never" />
+        android:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/back_home"
+        android:title="@string/back_home_title"
+        android:showAsAction="ifRoom" />
 
 </menu>
