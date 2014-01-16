@@ -4,7 +4,6 @@ import android.app.Fragment;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -15,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -31,7 +31,7 @@ public abstract class AbstractEmojiListFragment extends Fragment {
         ListView listView = (ListView) view.findViewById(R.id.list_view);
         ListAdapter adapter = new ArrayAdapter(this.getActivity().getBaseContext(), R.layout.emoji_item_row, getEmojiList());
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new ClickListener());
+        listView.setOnItemClickListener(new ClickListener(this));
 
         return view;
     }
@@ -39,27 +39,27 @@ public abstract class AbstractEmojiListFragment extends Fragment {
     protected abstract List<String> getEmojiList();
 
     class ClickListener implements AdapterView.OnItemClickListener {
+        private Fragment fragment;
+
+        ClickListener(Fragment fragment) {
+            this.fragment = fragment;
+        }
+
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-            final String item = (String) adapterView.getItemAtPosition(i);
+            final String emoji = (String) adapterView.getItemAtPosition(i);
 
             SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(view.getContext());
             String clickBehavior = sharedPref.getString(SettingsActivity.CLICK_BEHAVIOR, Constants.CLICK_BEHAVIOR_SEND);
-            updateCount(item);
+            updateCount(emoji);
             if (Constants.CLICK_BEHAVIOR_SEND.equals(clickBehavior)) {
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_SEND);
-                intent.putExtra(Intent.EXTRA_TEXT, item);
-                intent.setType("text/plain");
-                startActivity(intent);
+                MyNavigationUtils.displayMsgApp(fragment, emoji);
             } else {
                 ClipboardManager clipboard = (ClipboardManager) view.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData clip = ClipData.newPlainText("emoji", item);
-                clipboard.setPrimaryClip(clip);
-                Intent startMain = new Intent(Intent.ACTION_MAIN);
-                startMain.addCategory(Intent.CATEGORY_HOME);
-                startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(startMain);
+                clipboard.setPrimaryClip(ClipData.newPlainText("emoji", emoji));
+                String toastText = getResources().getString(R.string.copied_toast_text);
+                Toast.makeText(fragment.getActivity().getBaseContext(), toastText, Toast.LENGTH_SHORT).show();
+                MyNavigationUtils.displayHome(fragment);
             }
         }
 

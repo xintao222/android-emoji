@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -50,7 +51,7 @@ public class MainActivity extends AbstractTabActivity implements CategoryFragmen
 
         mAdView = (AdView) findViewById(R.id.adView);
         mAdView.loadAd(getAdRequestBuilder().build());
-        setNotification();
+
     }
 
 
@@ -62,10 +63,9 @@ public class MainActivity extends AbstractTabActivity implements CategoryFragmen
         // Creates an explicit intent for an Activity in your app
         Intent resultIntent = new Intent(this, MainActivity.class);
         mBuilder.setContentIntent(PendingIntent.getActivity(getBaseContext(), 1, resultIntent, PendingIntent.FLAG_CANCEL_CURRENT));
-        NotificationManager mNotificationManager =
-                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        // mId allows you to update the notification later on.
-        mNotificationManager.notify(11, mBuilder.build());
+        Notification notification = mBuilder.build();
+        notification.flags |= Notification.FLAG_NO_CLEAR;
+        ((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(11, notification);
     }
 
     private AdRequest.Builder getAdRequestBuilder() {
@@ -98,10 +98,8 @@ public class MainActivity extends AbstractTabActivity implements CategoryFragmen
                 startActivity(new Intent(this, SettingsActivity.class));
                 return true;
             case R.id.back_home:
-                Intent startMain = new Intent(Intent.ACTION_MAIN);
-                startMain.addCategory(Intent.CATEGORY_HOME);
-                startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(startMain);
+                ((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancelAll();
+                MyNavigationUtils.displayHome(this);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -125,6 +123,7 @@ public class MainActivity extends AbstractTabActivity implements CategoryFragmen
     protected void onResume() {
         super.onResume();
         mAdView.resume();
+        setNotification();
     }
 
     @Override

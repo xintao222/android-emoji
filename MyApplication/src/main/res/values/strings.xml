@@ -4,6 +4,7 @@
     <string name="app_name">nEmoji</string>
     <string name="app_name_full">Jun Wang</string>
     <string name="setting_title">Setting</string>
+    <string name="copied_toast_text">Copied!</string>
 
 
     <string name="action_settings">Settings</string>
