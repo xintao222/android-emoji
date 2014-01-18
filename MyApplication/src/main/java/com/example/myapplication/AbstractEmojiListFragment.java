@@ -58,7 +58,10 @@ public abstract class AbstractEmojiListFragment extends Fragment {
                 ClipboardManager clipboard = (ClipboardManager) view.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
                 clipboard.setPrimaryClip(ClipData.newPlainText("emoji", emoji));
                 String toastText = getResources().getString(R.string.copied_toast_text);
-                Toast.makeText(fragment.getActivity().getBaseContext(), toastText, Toast.LENGTH_SHORT).show();
+
+                if (sharedPref.getBoolean(SettingsActivity.COPY_TIP, true)) {
+                    Toast.makeText(fragment.getActivity().getBaseContext(), toastText, Toast.LENGTH_SHORT).show();
+                }
                 MyNavigationUtils.displayHome(fragment);
             }
         }

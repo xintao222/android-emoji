@@ -12,4 +12,10 @@ public class LatestEmojiFragment extends AbstractEmojiListFragment {
         EmojiHistoryDbHelper dbHelper = EmojiHistoryDbHelper.getInstance(getActivity().getBaseContext());
         return dbHelper.listLatestUsedEmoji();
     }
+
+    @Override
+    public void onResume() {
+        getActivity().getActionBar().setTitle(Constants.TabTags.LATEST);
+        super.onResume();
+    }
 }

@@ -5,11 +5,11 @@
     <item
         android:id="@+id/action_settings"
         android:title="@string/action_settings"
-        android:showAsAction="ifRoom" />
+        android:showAsAction="never" />
 
     <item
         android:id="@+id/back_home"
         android:title="@string/back_home_title"
-        android:showAsAction="ifRoom" />
+        android:showAsAction="never" />
 
 </menu>

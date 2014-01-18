@@ -4,6 +4,22 @@
     <string name="app_name">nEmoji</string>
     <string name="app_name_full">Jun Wang</string>
     <string name="setting_title">Setting</string>
+    <string name="setting_behavior">Set behavior when click Emoji</string>
+    <string name="setting_behavior_clip">Clip to clipboard</string>
+    <string name="setting_behavior_clip_value" translatable="false">CLIP</string>
+
+    <string name="setting_behavior_send">Send directly</string>
+    <string name="setting_behavior_send_value" translatable="false">SEND</string>
+
+    <string name="setting_hidden_app_title">Hidden APP</string>
+    <string name="setting_hidden_app_summary">Hidden APP after emoticon copy</string>
+
+    <string name="setting_copy_tip_title">Popup tip</string>
+    <string name="setting_copy_tip_summary">Popup copy success tip</string>
+
+    <string name="setting_notification_icon_title">Notification icon</string>
+    <string name="setting_notification_icon_summary">Show notification icon at status bar</string>
+
     <string name="copied_toast_text">Copied!</string>
 
 

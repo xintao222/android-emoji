@@ -4,6 +4,10 @@
     <string name="app_name">nEmoji</string>
     <string name="app_name_full">Jun Wang</string>
     <string name="setting_title">设置</string>
+    <string name="setting_behavior">设置点击表情时的动作</string>
+    <string name="setting_behavior_clip">复制到粘帖板</string>
+    <string name="setting_behavior_send">直接使用程序发送</string>
+
     <string name="copied_toast_text">已复制!</string>
 
 

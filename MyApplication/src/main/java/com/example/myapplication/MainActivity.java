@@ -8,13 +8,14 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -22,7 +23,6 @@ import com.google.android.gms.ads.AdView;
 import java.util.Arrays;
 import java.util.List;
 
-import static android.app.ActionBar.Tab;
 import static com.example.myapplication.Constants.FragmentTags;
 import static com.example.myapplication.Constants.TabTags;
 
@@ -40,14 +40,14 @@ public class MainActivity extends AbstractTabActivity implements CategoryFragmen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        View tabView = findViewById(R.id.tab_view);
-
+        TabFactory tabFactory = new TabFactory(this);
         ActionBar actionBar = getActionBar();
+
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.addTab(createTab(tabView, actionBar, TabTags.CATEGORY, FragmentTags.CATEGORY, CategoryFragment.class));
-        actionBar.addTab(createTab(tabView, actionBar, TabTags.HISTORY, FragmentTags.HISTORY, EmojiHistoryFragment.class));
-        actionBar.addTab(createTab(tabView, actionBar, TabTags.LATEST, FragmentTags.LATEST, LatestEmojiFragment.class));
+        actionBar.addTab(tabFactory.createCategoryTab());
+        actionBar.addTab(tabFactory.createHistoryTab());
+        actionBar.addTab(tabFactory.createLatestTab());
 
         mAdView = (AdView) findViewById(R.id.adView);
         mAdView.loadAd(getAdRequestBuilder().build());
@@ -56,6 +56,10 @@ public class MainActivity extends AbstractTabActivity implements CategoryFragmen
 
 
     private void setNotification() {
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        if (!sharedPref.getBoolean(SettingsActivity.NOTIFICATION_ICON, true)) {
+            return;
+        }
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.ic_launcher)
                 .setContentTitle("Jun Wang")
@@ -74,14 +78,6 @@ public class MainActivity extends AbstractTabActivity implements CategoryFragmen
         // Optionally populate the ad request builder.
         adRequestBuilder.addTestDevice(getResources().getString(R.string.test_machine_id));
         return adRequestBuilder;
-    }
-
-    private <T extends Fragment> Tab createTab(View tabView, ActionBar actionBar, String tabTag,
-                                               String fragmentTag, Class<T> fragmentClass) {
-        return actionBar.newTab()
-                .setText(tabTag)
-                .setTag(tabTag)
-                .setTabListener(new TabListener<T>(this, tabView, fragmentTag, fragmentClass));
     }
 
     @Override
@@ -138,7 +134,6 @@ public class MainActivity extends AbstractTabActivity implements CategoryFragmen
     public void onDestroy() {
         // Destroy the AdView.
         mAdView.destroy();
-
         super.onDestroy();
     }
 }

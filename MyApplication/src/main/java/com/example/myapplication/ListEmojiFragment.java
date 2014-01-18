@@ -34,4 +34,10 @@ public class ListEmojiFragment extends AbstractEmojiListFragment {
     private TypedArray findList(String category) {
         return getResources().obtainTypedArray(CategoryConfig.getResourceId(category));
     }
+
+    @Override
+    public void onResume() {
+        getActivity().getActionBar().setTitle("category | " + category);
+        super.onResume();
+    }
 }

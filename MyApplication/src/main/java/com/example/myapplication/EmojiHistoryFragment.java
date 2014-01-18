@@ -13,4 +13,9 @@ public class EmojiHistoryFragment extends AbstractEmojiListFragment {
         return dbHelper.listSortedHistory();
     }
 
+    @Override
+    public void onResume() {
+        getActivity().getActionBar().setTitle(Constants.TabTags.HISTORY);
+        super.onResume();
+    }
 }
