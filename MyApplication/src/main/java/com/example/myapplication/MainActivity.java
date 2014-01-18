@@ -110,7 +110,7 @@ public class MainActivity extends AbstractTabActivity implements CategoryFragmen
     @Override
     public void onCategorySelected(String category) {
         Fragment categoryFragment = getFragmentManager().findFragmentByTag(FragmentTags.CATEGORY);
-        Fragment listEmojiFragment = new ListEmojiFragment(category);
+        Fragment listEmojiFragment = new ListEmojiFragment().setCategory(category);
         getFragmentManager().beginTransaction()
                 .detach(categoryFragment)
                 .add(categoryFragment.getId(), listEmojiFragment, FragmentTags.EMOJI_LIST)

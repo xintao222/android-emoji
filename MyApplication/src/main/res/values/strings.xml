@@ -10,7 +10,7 @@
     <string name="action_settings">Settings</string>
     <string name="back_home_title">Exit</string>
 
-    <string name="ad_unit_id">a152d3f8185da31</string>
-    <string name="test_machine_id">FCA35BE16BC430A8FFA13D0F90FE18A7</string>
+    <string name="ad_unit_id" translatable="false">a152d3f8185da31</string>
+    <string name="test_machine_id" translatable="false">FCA35BE16BC430A8FFA13D0F90FE18A7</string>
 
 </resources>

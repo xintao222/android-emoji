@@ -2,8 +2,6 @@ package com.example.myapplication;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +11,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,13 +21,14 @@ public class CategoryFragment extends Fragment {
     public interface OnCategorySelectedListener {
         public void onCategorySelected(String category);
     }
+
     private OnCategorySelectedListener onCategorySelectedListener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_list_view, container, false);
 
-        List<String> category = readCategory();
+        List<String> category = CategoryConfig.getCategoryList();
         ListView listView = (ListView) view.findViewById(R.id.list_view);
         ListAdapter adapter = new ArrayAdapter(container.getContext(), R.layout.emoji_category_row, category);
 
@@ -39,16 +37,6 @@ public class CategoryFragment extends Fragment {
         listView.setOnItemClickListener(new ClickListener(this));
 
         return view;
-    }
-
-    private List<String> readCategory() {
-        Resources res = getResources();
-        List<String> categoryList = new ArrayList<String>();
-        TypedArray category = res.obtainTypedArray(R.array.category);
-        for (int index = 0; index < category.length(); index++) {
-            categoryList.add(category.getText(index).toString());
-        }
-        return categoryList;
     }
 
     @Override
@@ -62,7 +50,7 @@ public class CategoryFragment extends Fragment {
     }
 
     class ClickListener implements AdapterView.OnItemClickListener {
-        private  CategoryFragment host;
+        private CategoryFragment host;
 
         ClickListener(CategoryFragment host) {
             this.host = host;

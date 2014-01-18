@@ -12,8 +12,12 @@ import java.util.List;
 public class ListEmojiFragment extends AbstractEmojiListFragment {
     private String category;
 
-    public ListEmojiFragment(String category) {
+    public ListEmojiFragment() {
+    }
+
+    public ListEmojiFragment setCategory(String category) {
         this.category = category;
+        return this;
     }
 
     @Override
@@ -28,12 +32,6 @@ public class ListEmojiFragment extends AbstractEmojiListFragment {
     }
 
     private TypedArray findList(String category) {
-        if ("smile".equals(category)) {
-            return getResources().obtainTypedArray(R.array.smile_list);
-        } else if ("cry".equals(category)) {
-            return getResources().obtainTypedArray(R.array.cry_list);
-        }
-
-        return null;
+        return getResources().obtainTypedArray(CategoryConfig.getResourceId(category));
     }
 }

@@ -1,20 +1,223 @@
 <resources>
 
     <array name="category">
-        <item>cry</item>
         <item>smile</item>
+        <item>love</item>
+        <item>cry</item>
+        <item>helpless</item>
+        <item>shy</item>
+        <item>surprise</item>
+        <item>angry</item>
+        <item>evil</item>
     </array>
 
     <array name="smile_list">
-        <item>(*´Д`)つ))´∀`)</item>
-        <item>(^u^)</item>
-        <item>(*‘ v`*)</item>
+        <item>d(d＇∀＇)</item>
+        <item>d(`･∀･)b</item>
+        <item>(*´∀`)~♥</item>
+        <item>σ`∀´)σ</item>
+        <item>(〃∀〃)</item>
+        <item>(^_っ^)</item>
+        <item>(｡◕∀◕｡)</item>
+        <item>(́◉◞౪◟◉‵)</item>
+        <item>ヽ(́◕◞౪◟◕‵)ﾉ</item>
+        <item>ヽ(✿ﾟ▽ﾟ)ノ</item>
+        <item>(σ′▽‵)′▽‵)σ</item>
+        <item>(((o(*ﾟ▽ﾟ*)o)))</item>
+        <item>｡:.ﾟヽ(*´∀`)ﾉﾟ.:｡</item>
+        <item>σ ﾟ∀ ﾟ) ﾟ∀ﾟ)σ </item>
+        <item>(శωశ)</item>
+        <item>(◔౪◔)</item>
+        <item>ლ(╹◡╹ლ)</item>
+        <item>(✪ω✪)</item>
+        <item>(´≖◞౪◟≖)</item>
+        <item>(́=◞౪◟=‵)</item>
+        <item>(◔⊖◔)つ</item>
+        <item>(⁰▿⁰)</item>
+        <item>─=≡Σ((( つ•̀ω•́)つ</item>
+        <item>(๑´ڡ`๑)</item>
+        <item>ヽ(・×・´)ゞ</item>
+        <item>_(:3 ⌒ﾞ)_</item>
+        <item>( σ՞ਊ ՞)σ </item>
+        <item>☆⌒(*^-゜)v</item>
+        <item>(ㄏ￣▽￣)ㄏ   ㄟ(￣▽￣ㄟ)</item>
+        <item>(灬ºωº灬)</item>
+        <item>(❛◡❛✿)</item>
+        <item>( ิ◕㉨◕ ิ)</item>
+        <item>(๑• . •๑)</item>
+        <item>(´ΘωΘ`)</item>
+        <item>( ^ω^)</item>
+        <item>(ㅅ˘ㅂ˘)</item>
+        <item>( ﾟ∀ﾟ)o彡ﾟ</item>
+        <item>♥(´∀` )人</item>
+        <item>(๑ơ ₃ ơ)♥</item>
+        <item>(^ρ^)/</item>
+        <item>♡(*´∀｀*)人(*´∀｀*)♡</item>
+        <item>☆^(ｏ´Ф∇Ф)o</item>
+        <item>( • ̀ω•́ )</item>
+        <item>ヾ(●゜▽゜●)♡ </item>
+        <item>✧◝(⁰▿⁰)◜✧</item>
+        <item>ヾ(´ε`ヾ)</item>
+        <item>ヽ(●´ε｀●)ノ</item>
+        <item>(っ●ω●)っ</item>
+        <item>ヽ( ° ▽°)ノ</item>
+    </array>
+
+    <array name="helpless_list">
+        <item>(´ﾟдﾟ`)</item>
+        <item>-`д´-</item>
+        <item>╮(╯_╰)╭</item>
+        <item>(´-ι_-｀)</item>
+        <item>(´･_･`)</item>
+        <item>(ﾟ⊿ﾟ)</item>
+        <item>┐(´д`)┌</item>
+        <item>( º﹃º )</item>
+        <item>(　◜◡‾)</item>
+        <item>(‾◡◝　)</item>
+        <item>(◞‸◟)</item>
+        <item>(´σ-`)</item>
+        <item>il||li _|￣|○ヽ(･ω･｀)</item>
+        <item>(눈‸눈)</item>
+        <item>(ヾﾉ･ω･`)</item>
+        <item>(≖ᴗ≖๑)</item>
+        <item><![CDATA[ʅ（´◔౪◔）ʃ]]></item>
+        <item>ლ(◉◞౪◟◉ )ლ</item>
+        <item>_(┐「﹃ﾟ｡)_</item>
+        <item>╮(′～‵〞)╭</item>
+        <item>ლ(╯⊙ε⊙ლ╰)</item>
+        <item> ( ´ﾟДﾟ`)</item>
+        <item>(≖＿≖)✧</item>
+        <item> (◜◔。◔◝)</item>
+        <item> (◜◔。◔◝)</item>
+        <item> (　´・◡・｀)</item>
+    </array>
+
+    <array name="shy_list">
+        <item>(*´艸`*)</item>
+        <item>(ﾉ∀`*)</item>
+        <item>(,,・ω・,,)</item>
+        <item>(〃∀〃)</item>
+        <item>(つд⊂)</item>
+        <item>（ ´☣///_ゝ///☣｀）</item>
+        <item>(๑´ㅂ`๑)</item>
+        <item>(๑´ڡ`๑)</item>
+        <item>(o´罒`o)</item>
+        <item>(灬ºωº灬)</item>
+        <item>(๑• . •๑)</item>
+        <item>(๑ơ ₃ ơ)♥</item>
+        <item>(*ˇωˇ*人)</item>
+        <item>(≧∀≦)ゞ</item>
+        <item>(๑´ㅁ`)</item>
+        <item>(●｀ 艸 ´)</item>
+        <item>,,Ծ‸Ծ,,</item>
+        <item>(❁´ω`❁)*✲ﾟ*</item>
+        <item> (//´/◒/`//)</item>
+        <item>(▰˘◡˘▰)</item>
     </array>
 
     <array name="cry_list">
         <item>(〒︿〒)</item>
         <item>｡ﾟヽ(ﾟ´Д`)ﾉﾟ｡</item>
         <item>ヾ(;ﾟ;Д;ﾟ;)ﾉﾞ</item>
+        <item>。･ﾟ･(つд`ﾟ)･ﾟ･</item>
+        <item>⊂彡☆))д`)</item>
+        <item>இдஇ</item>
+        <item>(´;ω;`)</item>
+        <item>(´Ａ｀。)</item>
+        <item>｡ﾟ(ﾟ´ω`ﾟ)ﾟ｡</item>
+        <item>(╥﹏╥)</item>
+        <item> (☍﹏⁰) </item>
+        <item>( ´•̥̥̥ω•̥̥̥` )</item>
+        <item>:;(∩´﹏`∩);:</item>
+        <item>(;´༎ຶД༎ຶ`)</item>
     </array>
 
+    <array name="surprise_list">
+        <item>(ﾟд⊙)</item>
+        <item>(‘⊙д-)</item>
+        <item>Σ(*ﾟдﾟﾉ)ﾉ</item>
+        <item>(((ﾟДﾟ;)))</item>
+        <item>(д) ﾟﾟ</item>
+        <item>(((ﾟдﾟ)))</item>
+        <item>(☉д⊙)</item>
+        <item>(ﾟдﾟ≡ﾟдﾟ)</item>
+        <item>(|||ﾟдﾟ)</item>
+        <item>Σ( ° △ °)</item>
+        <item>Σ(ﾟДﾟ；≡；ﾟдﾟ)</item>
+        <item>(´⊙ω⊙`)</item>
+        <item>( ºΔº )</item>
+        <item>Σ(;ﾟдﾟ)</item>
+        <item>┌|◎o◎|┘</item>
+        <item>∑(ι´Дン)ノ</item>
+        <item>ε=ε=ヾ(;ﾟдﾟ)/</item>
+        <item>( • ̀ω•́ )</item>
+        <item>(⁰⊖⁰)</item>
+    </array>
+
+    <array name="angry_list">
+        <item>(￣ε(#￣)</item>
+        <item>（︶︿︶）＝凸</item>
+        <item>（（‵□′））</item>
+        <item>（︶︿︶）</item>
+        <item>(ﾟ皿ﾟﾒ)</item>
+        <item>(ﾒ ﾟ皿ﾟ)ﾒ</item>
+        <item>(#`Д´)ﾉ</item>
+        <item>(#`皿´)</item>
+        <item>(-`ェ´-╬)</item>
+        <item>(╬ﾟдﾟ)</item>
+        <item>(`д´)</item>
+        <item>ヽ(#`Д´)ﾉ</item>
+        <item>(╬☉д⊙)</item>
+        <item>(／‵Д′)／~ ╧╧</item>
+        <item>(╯‵□′)╯︵┴─┴</item>
+        <item>（╯－＿－）╯╧╧ </item>
+        <item>⊙谷⊙</item>
+        <item>ヽ(`Д´)ノ</item>
+        <item>(╬ﾟдﾟ)▄︻┻┳═一</item>
+        <item>٩(ŏ﹏ŏ、)۶</item>
+        <item>(╬ﾟ ◣ ﾟ)</item>
+        <item>(☄◣ω◢)☄</item>
+        <item>(ಠ益ಠ)</item>
+        <item>(ﾒﾟДﾟ)ﾒ</item>
+        <item>(`へ´≠)</item>
+        <item>(・`ω´・)</item>
+        <item>(#ﾟ⊿`)凸</item>
+    </array>
+
+    <array name="love_list">
+        <item>(*´∀`)~♥</item>
+        <item>ε٩(๑&lt; ₃ &gt;)۶з</item>
+        <item>(　ﾟ∀ﾟ)つ≡≡≡♡♡♡)`ν゜)ｸﾞｼｬ</item>
+        <item>(´▽`ʃ♡ƪ)</item>
+        <item>♥(´∀` )人</item>
+        <item>(๑ơ ₃ ơ)♥</item>
+        <item>(●´ω｀●)ゞ</item>
+        <item>♡(*´∀｀*)人(*´∀｀*)♡</item>
+        <item>(*´з｀*)</item>
+        <item>(｡•ㅅ•｡)♡</item>
+        <item>ヾ(●゜▽゜●)♡ </item>
+        <item>( శ 3ੜ)～♥</item>
+        <item>( ♥д♥)</item>
+        <item>(♡˙︶˙♡)</item>
+        <item>Σ>―(〃°ω°〃)♡→</item>
+        <item>(´,,•ω•,,)♡</item>
+        <item>( *¯ ³¯*)♡ㄘゅ</item>
+        <item>(　ﾟ∀ﾟ) ﾉ♡</item>
+        <item>(*´д`)~♥</item>
+        <item>: ♡｡ﾟ.(*♡´◡` 人´◡` ♡*)ﾟ♡ °・</item>
+    </array>
+
+    <array name="evil_list">
+        <item>ლ｜＾Д＾ლ｜</item>
+        <item>ლ(・´ｪ`・ლ)</item>
+        <item>ლ(╹◡╹ლ)</item>
+        <item>ԅ(¯﹃¯ԅ)</item>
+        <item>ლ(́◕◞౪◟◕‵ლ)</item>
+        <item>ლ(ﾟдﾟლ)</item>
+        <item>(☄◣ω◢)☄</item>
+        <item>(｢･ω･)｢</item>
+        <item>ლ(◉◞౪◟◉ )ლ</item>
+        <item>ლ(´•д• ̀ლ</item>
+        <item>ლ(╯⊙ε⊙ლ╰)</item>
+    </array>
 </resources>
