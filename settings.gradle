@@ -1,2 +1,1 @@
-include ':MyApplication'
-include ':libraries:google-play-services_lib'
+include ':libraries:google-play-services_lib', 'EmojiApp'

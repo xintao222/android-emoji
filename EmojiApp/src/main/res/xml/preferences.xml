@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:key="click_behavior"
+        android:title="@string/setting_behavior"
+        android:entries="@array/app_setting_click_behavior"
+        android:entryValues="@array/app_setting_click_behavior_value"
+        android:defaultValue="SEND" />
+
+
+    <CheckBoxPreference
+        android:key="hidden_app"
+        android:title="@string/setting_hidden_app_title"
+        android:summary="@string/setting_hidden_app_summary"
+        android:defaultValue="true" />
+    />
+
+    <CheckBoxPreference
+        android:key="copy_tip"
+        android:title="@string/setting_copy_tip_title"
+        android:summary="@string/setting_copy_tip_summary"
+        android:defaultValue="true" />
+    />
+
+    <CheckBoxPreference
+        android:key="notification_icon"
+        android:title="@string/setting_notification_icon_title"
+        android:summary="@string/setting_notification_icon_summary"
+        android:defaultValue="true" />
+    />
+
+    <com.bitime.emoji.setting.NumberPickerPreference
+        android:key="historySize"
+        android:title="@string/setting_history_size"
+        android:summary="@string/setting_history_size_summary"
+        android:defaultValue="20"
+        />
+
+</PreferenceScreen>
