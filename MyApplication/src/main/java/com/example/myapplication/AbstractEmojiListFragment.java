@@ -4,9 +4,7 @@ import android.app.Fragment;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +20,6 @@ import java.util.List;
  * Created by ludwang on 14-1-11.
  */
 public abstract class AbstractEmojiListFragment extends Fragment {
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -49,17 +46,14 @@ public abstract class AbstractEmojiListFragment extends Fragment {
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
             final String emoji = (String) adapterView.getItemAtPosition(i);
 
-            SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(view.getContext());
-            String clickBehavior = sharedPref.getString(SettingsActivity.CLICK_BEHAVIOR, Constants.CLICK_BEHAVIOR_SEND);
             updateCount(emoji);
-            if (Constants.CLICK_BEHAVIOR_SEND.equals(clickBehavior)) {
+            if (PreferencesHelper.isSendAsClickBehavior(getActivity().getBaseContext())) {
                 MyNavigationUtils.displayMsgApp(fragment, emoji);
             } else {
                 ClipboardManager clipboard = (ClipboardManager) view.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
                 clipboard.setPrimaryClip(ClipData.newPlainText("emoji", emoji));
                 String toastText = getResources().getString(R.string.copied_toast_text);
-
-                if (sharedPref.getBoolean(SettingsActivity.COPY_TIP, true)) {
+                if (PreferencesHelper.isNeedCopyTip(getActivity().getBaseContext())) {
                     Toast.makeText(fragment.getActivity().getBaseContext(), toastText, Toast.LENGTH_SHORT).show();
                 }
                 MyNavigationUtils.displayHome(fragment);

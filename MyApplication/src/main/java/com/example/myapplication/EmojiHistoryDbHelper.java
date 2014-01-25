@@ -79,26 +79,26 @@ public class EmojiHistoryDbHelper extends SQLiteOpenHelper {
         }
     }
 
-    public List<String> listSortedHistory() {
+    public List<String> listSortedHistory(Integer historySize) {
         SQLiteDatabase db = this.getReadableDatabase();
         String[] projection = {EMOJI_VALUE, USED_COUNT};
         String sortOrder = USED_COUNT + " DESC";
 
         List<String> sortedHistory = new ArrayList<String>();
-        Cursor cursor = db.query(TABLE_NAME, projection, null, null, null, null, sortOrder, "20");
+        Cursor cursor = db.query(TABLE_NAME, projection, null, null, null, null, sortOrder, String.valueOf(historySize));
         while (cursor.moveToNext()) {
             sortedHistory.add(cursor.getString(cursor.getColumnIndexOrThrow(EMOJI_VALUE)));
         }
         return sortedHistory;
     }
 
-    public List<String> listLatestUsedEmoji() {
+    public List<String> listLatestUsedEmoji(Integer historySize) {
         SQLiteDatabase db = this.getReadableDatabase();
         String[] projection = {EMOJI_VALUE, LATEST_DATE};
         String sortOrder = LATEST_DATE + " DESC";
 
         List<String> sortedHistory = new ArrayList<String>();
-        Cursor cursor = db.query(TABLE_NAME, projection, null, null, null, null, sortOrder, "20");
+        Cursor cursor = db.query(TABLE_NAME, projection, null, null, null, null, sortOrder, String.valueOf(historySize));
         while (cursor.moveToNext()) {
             sortedHistory.add(cursor.getString(cursor.getColumnIndexOrThrow(EMOJI_VALUE)));
         }
@@ -122,5 +122,11 @@ public class EmojiHistoryDbHelper extends SQLiteOpenHelper {
         values.put(USED_COUNT, count);
         values.put(LATEST_DATE, System.currentTimeMillis());
         db.update(TABLE_NAME, values, EMOJI_VALUE + "=?", new String[]{emoji});
+    }
+
+    public void clearHistory(){
+        Log.i(this.getClass().getSimpleName(), String.format("clear history now..."));
+        SQLiteDatabase db = this.getReadableDatabase();
+        db.delete(TABLE_NAME, null, null);
     }
 }

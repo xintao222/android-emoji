@@ -21,7 +21,7 @@
         android:title="@string/setting_copy_tip_title"
         android:summary="@string/setting_copy_tip_summary"
         android:defaultValue="true" />
-        />
+    />
 
     <CheckBoxPreference
         android:key="notification_icon"
@@ -29,5 +29,12 @@
         android:summary="@string/setting_notification_icon_summary"
         android:defaultValue="true" />
     />
+
+    <com.example.myapplication.NumberPickerPreference
+        android:key="historySize"
+        android:title="@string/setting_history_size"
+        android:summary="@string/setting_history_size_summary"
+        android:defaultValue="20"
+        />
 
 </PreferenceScreen>

@@ -14,11 +14,6 @@ import android.view.MenuItem;
  */
 public class SettingsActivity extends Activity {
 
-    public static String CLICK_BEHAVIOR = "click_behavior";
-    public static String COPY_TIP = "copy_tip";
-    public static String HIDDEN_APP = "hidden_app";
-    public static String NOTIFICATION_ICON = "notification_icon";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

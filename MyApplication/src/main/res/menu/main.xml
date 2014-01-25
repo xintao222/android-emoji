@@ -12,4 +12,9 @@
         android:title="@string/back_home_title"
         android:showAsAction="never" />
 
+    <item android:id="@+id/clear_history"
+        android:title="@string/clear_history_title"
+        android:showAsAction="never"
+        />
+
 </menu>

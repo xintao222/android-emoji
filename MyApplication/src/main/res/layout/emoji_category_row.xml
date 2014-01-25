@@ -29,7 +29,7 @@ tools:ignore="NewApi">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="8dip"
+        android:layout_marginTop="8sp"
         android:textAppearance="?android:attr/textAppearanceListItem" />
 
     <TextView

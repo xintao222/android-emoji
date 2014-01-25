@@ -10,12 +10,12 @@ public class EmojiHistoryFragment extends AbstractEmojiListFragment {
     @Override
     protected List<String> getEmojiList() {
         EmojiHistoryDbHelper dbHelper = EmojiHistoryDbHelper.getInstance(getActivity().getBaseContext());
-        return dbHelper.listSortedHistory();
+        return dbHelper.listSortedHistory(PreferencesHelper.getHistorySize(getActivity().getBaseContext()));
     }
 
     @Override
     public void onResume() {
-        getActivity().getActionBar().setTitle(Constants.TabTags.HISTORY);
+        getActivity().getActionBar().setTitle(getResources().getString(R.string.tab_history));
         super.onResume();
     }
 }

@@ -8,14 +8,13 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -56,8 +55,7 @@ public class MainActivity extends AbstractTabActivity implements CategoryFragmen
 
 
     private void setNotification() {
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        if (!sharedPref.getBoolean(SettingsActivity.NOTIFICATION_ICON, true)) {
+        if (!PreferencesHelper.isShowNotification(getBaseContext())) {
             return;
         }
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
@@ -96,6 +94,10 @@ public class MainActivity extends AbstractTabActivity implements CategoryFragmen
             case R.id.back_home:
                 ((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancelAll();
                 MyNavigationUtils.displayHome(this);
+                return true;
+            case R.id.clear_history:
+                EmojiHistoryDbHelper.getInstance(getBaseContext()).clearHistory();
+                Toast.makeText(getBaseContext(), getResources().getString(R.string.clear_history_success), Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

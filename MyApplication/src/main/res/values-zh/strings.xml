@@ -13,4 +13,21 @@
 
     <string name="action_settings">设置</string>
     <string name="back_home_title">退出</string>
+    <string name="clear_history_title">清除历史</string>
+    <string name="clear_history_success">清除成功!</string>
+
+    <string name="category_smile">愉悦</string>
+    <string name="category_love">爱心</string>
+    <string name="category_cry">哭</string>
+    <string name="category_helpless">无助</string>
+    <string name="category_shy">害羞</string>
+    <string name="category_surprise">惊喜</string>
+    <string name="category_angry">愤怒</string>
+    <string name="category_evil">猥琐</string>
+    <string name="category_doubt">疑问</string>
+    <string name="category_others">其他</string>
+
+    <string name="tab_category">分类</string>
+    <string name="tab_history">最常使用</string>
+    <string name="tab_latest">最近使用</string>
 </resources>

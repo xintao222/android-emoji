@@ -1,9 +1,8 @@
 package com.example.myapplication;
 
-import android.content.res.TypedArray;
 import android.util.Log;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -23,21 +22,14 @@ public class ListEmojiFragment extends AbstractEmojiListFragment {
     @Override
     protected List<String> getEmojiList() {
         Log.i(this.getClass().getSimpleName(), String.format("render category for '%s'", category));
-        List<String> emojiList = new ArrayList<String>();
-        TypedArray list = findList(category);
-        for (int index = 0; index < list.length(); index++) {
-            emojiList.add(list.getText(index).toString());
-        }
-        return emojiList;
-    }
-
-    private TypedArray findList(String category) {
-        return getResources().obtainTypedArray(CategoryConfig.getResourceId(category));
+        String[] resources = CategoryConfig.getListResourceId(category);
+        return Arrays.asList(resources);
     }
 
     @Override
     public void onResume() {
-        getActivity().getActionBar().setTitle("category | " + category);
+        getActivity().getActionBar().setTitle(getResources().getString(R.string.tab_category) + " | " +
+                getResources().getString(CategoryConfig.getNameResourceId(category)));
         super.onResume();
     }
 }

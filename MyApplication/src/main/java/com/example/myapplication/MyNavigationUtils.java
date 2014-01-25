@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 
 /**
  * 导航的辅助工具类
@@ -16,7 +14,7 @@ public class MyNavigationUtils {
 
     public static void displayHome(Fragment fragment) {
         Context context = fragment.getActivity().getBaseContext();
-        if (!isSetHiddenApp(context)) {
+        if (!PreferencesHelper.isSetHiddenApp(context)) {
             return;
         }
         Intent intent = new Intent(Intent.ACTION_MAIN);
@@ -25,13 +23,8 @@ public class MyNavigationUtils {
         fragment.startActivity(intent);
     }
 
-    private static boolean isSetHiddenApp(Context context) {
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-        return sharedPref.getBoolean(SettingsActivity.HIDDEN_APP, true);
-    }
-
     public static void displayHome(Activity activity) {
-        if (!isSetHiddenApp(activity.getBaseContext())) {
+        if (!PreferencesHelper.isSetHiddenApp(activity.getBaseContext())) {
             return;
         }
         Intent intent = new Intent(Intent.ACTION_MAIN);
