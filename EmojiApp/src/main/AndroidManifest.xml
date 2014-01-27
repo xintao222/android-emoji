@@ -23,7 +23,7 @@
 
         <activity
             android:name="com.bitime.emoji.MainActivity"
-            android:label="@string/app_name_full"
+            android:label="@string/app_name"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

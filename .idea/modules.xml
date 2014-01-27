@@ -3,9 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EmojiApp/EmojiApp.iml" filepath="$PROJECT_DIR$/EmojiApp/EmojiApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/EmojiProject.iml" filepath="$PROJECT_DIR$/EmojiProject.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MyApplicationProject.iml" filepath="$PROJECT_DIR$/MyApplicationProject.iml" />
-      <module fileurl="file://$PROJECT_DIR$/google-play-services_lib/google-play-services_lib.iml" filepath="$PROJECT_DIR$/google-play-services_lib/google-play-services_lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/emojiAppProject.iml" filepath="$PROJECT_DIR$/emojiAppProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/google-play-services_lib/google-play-services_lib.iml" filepath="$PROJECT_DIR$/libraries/google-play-services_lib/google-play-services_lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/libraries.iml" filepath="$PROJECT_DIR$/libraries/libraries.iml" />
     </modules>
   </component>

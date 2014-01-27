@@ -24,11 +24,21 @@ android {
     lintOptions {
         abortOnError false
     }
+
+    sourceSets {
+        instrumentTest.setRoot('src/test')
+    }
 }
 
 dependencies {
     compile 'com.android.support:appcompat-v7:+'
     compile 'com.google.android.gms:play-services:4.0.30'
     compile project(':libraries:google-play-services_lib')
-}
 
+    // Android Studio doesn't recognize the `testLocal` task, so we define the same dependencies as above for instrumentTest
+    // which is Android Studio's test task
+    instrumentTestCompile 'junit:junit:4.11'
+    instrumentTestCompile 'com.google.android:android:4.1.1.4'
+    instrumentTestCompile 'com.android.support:support-v4:13.0.+'
+    instrumentTestCompile 'org.robolectric:robolectric:2.1.+'
+}

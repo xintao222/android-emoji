@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">nEmoji</string>
-    <string name="app_name_full">Jun Wang</string>
+    <string name="app_name">颜文字</string>
+    <string name="app_name_full">颜文字 by bitime</string>
     <string name="setting_title">设置</string>
     <string name="setting_behavior">设置点击表情时的动作</string>
     <string name="setting_behavior_clip">复制到粘帖板</string>

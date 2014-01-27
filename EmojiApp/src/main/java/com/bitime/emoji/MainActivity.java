@@ -29,6 +29,7 @@ import com.google.android.gms.ads.AdView;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.bitime.emoji.CategoryConfig.EmojiCategory;
 import static com.bitime.emoji.Constants.FragmentTags;
 import static com.bitime.emoji.Constants.TabTags;
 
@@ -113,7 +114,7 @@ public class MainActivity extends AbstractTabActivity implements CategoryFragmen
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     @Override
-    public void onCategorySelected(String category) {
+    public void onCategorySelected(EmojiCategory category) {
         Fragment categoryFragment = getFragmentManager().findFragmentByTag(FragmentTags.CATEGORY);
         Fragment listEmojiFragment = new ListEmojiFragment().setCategory(category);
         getFragmentManager().beginTransaction()

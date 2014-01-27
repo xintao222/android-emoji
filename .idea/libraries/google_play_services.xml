@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="google-play-services">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/EmojiApp/build/exploded-bundles/MyApplicationProjectLibrariesGooglePlayServices_libUnspecified.aar/libs/google-play-services.jar!/" />
+      <root url="jar://$PROJECT_DIR$/EmojiApp/build/exploded-bundles/EmojiAppProjectLibrariesGooglePlayServices_libUnspecified.aar/libs/google-play-services.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

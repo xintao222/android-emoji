@@ -24,15 +24,8 @@ public class CategoryConfig {
         return lines;
     }
 
-    public static String[] getListResourceId(String category) {
-        return EmojiCategory.toEmojiCategory(category).resources;
-    }
-
-    public static int getNameResourceId(String category) {
-        return EmojiCategory.toEmojiCategory(category).nameResourceId;
-    }
-
     private static String[] smileList = {
+            "（＾ิω＾ิ）",
             "d(d＇∀＇)",
             "d(`･∀･)b",
             "(*´∀`)~♥",
@@ -50,7 +43,6 @@ public class CategoryConfig {
             "─=≡Σ((( つ•̀ω•́)つ",
             "(๑´ڡ`๑)",
             "ヽ(・×・´)ゞ",
-            "_(:3 ⌒ﾞ)_",
             "( σ՞ਊ ՞)σ ",
             "☆⌒(*^-゜)v",
             "(ㄏ￣▽￣)ㄏ   ㄟ(￣▽￣ㄟ)",
@@ -102,6 +94,7 @@ public class CategoryConfig {
             "\"≡ (^(OO)^) ≡\"",
             "~o}^_^{o~",
             "=^.^=",
+            "(^_^メ)"
     };
 
     private static String[] helplessList = {
@@ -123,6 +116,8 @@ public class CategoryConfig {
             "╮(′～‵〞)╭",
             "ლ(╯⊙ε⊙ლ╰)",
             " ( ´ﾟДﾟ`)",
+            "¯\\_(ツ)_/¯",
+            "ヽ（´ー｀）┌",
     };
 
     private static String[] shyList = {
@@ -145,7 +140,6 @@ public class CategoryConfig {
             ",,Ծ‸Ծ,,",
             "(❁´ω`❁)*✲ﾟ*",
             " (//´/◒/`//)",
-            "(▰˘◡˘▰)",
             "#^_^#",
             "~*.*~",
             "~@^_^@~",
@@ -200,16 +194,19 @@ public class CategoryConfig {
             "Σ( ° △ °|||)",
             "∑(っ °Д °;)っ",
             "ミ ﾟДﾟ彡 ",
-            "\" ◎ \"",
             "0_0",
+            " (^o^)丿",
             "~o.0~",
+            "(゜o゜) ",
             "!_!",
-            "(° ο°)~@"
+            "(° ο°)~@",
+            "=͟͟͞͞( •̀д•́)"
     };
 
     private static String[] angryList = {
             "(￣ε(#￣)",
             "<(‵^′)>",
+            "<`ヘ´> ",
             "(*^︹^*) ",
             "（︶︿︶）＝凸",
             "（（‵□′））",
@@ -246,6 +243,8 @@ public class CategoryConfig {
             "（ˇ＾ˇ）",
             "凸ˋ_ˊ# ",
             ">_<#",
+            "(╬ಠิ益ಠิ)",
+            "(๑≖ิิ益≖ิ๑)",
     };
 
     private static String[] loveList = {
@@ -281,6 +280,14 @@ public class CategoryConfig {
             "ლ(´•д• ̀ლ",
             "ლ(╯⊙ε⊙ლ╰)",
             "→_→",
+            "ლ(･ ิω･ิლ)",
+            "ლ(⁰⊖⁰ლ)",
+            "ლ（´∀`ლ）",
+            "ლ(｀∀´ლ)",
+            "ლ(❛◡❛✿)ლ",
+            "ლ(╹ε╹ლ)",
+            "（ლ ^ิ౪^ิ）ლ",
+            "（ლ ^ิ౪^ิ）ლ",
     };
 
     private static String[] doubtList = {
@@ -290,6 +297,7 @@ public class CategoryConfig {
             "（?ε?）?",
             "(+_+)?",
             "( ^_^ )?",
+            "◎−◎？",
     };
 
     private static String[] othersList = {
@@ -302,6 +310,14 @@ public class CategoryConfig {
             "（*+﹏+*）~ @",
             "(^_^)∠※",
             "~>_<~+",
+            "<(｀^´)>",
+            "( ^^) _U~~",
+            "(゜o゜(☆○=(-_- )",
+            "(ｏ￣∇￣)＝◯)`ν゜)･；'",
+            "_ノ乙(､ﾝ､)_",
+            "(ฅ´ω`ฅ)",
+            "(●｀∀´●)╯╰(●'◡'●)╮～",
+            "( (－_－)y--~~",
     };
 
     public enum EmojiCategory {
@@ -324,12 +340,12 @@ public class CategoryConfig {
             return nameResourceId;
         }
 
-        public String[] getResources() {
-            return resources;
-        }
-
         public String getDescription() {
             return description;
+        }
+
+        public String[] getResources() {
+            return resources;
         }
 
         public static EmojiCategory toEmojiCategory(String category) {

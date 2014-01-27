@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">nEmoji</string>
-    <string name="app_name_full">Jun Wang</string>
+    <string name="app_name">Emoji</string>
+    <string name="app_name_full">Emoji by bitime</string>
     <string name="setting_title">Setting</string>
     <string name="setting_behavior">Set behavior when click Emoji</string>
     <string name="setting_behavior_clip">Clip to clipboard</string>

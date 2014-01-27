@@ -14,7 +14,7 @@ import java.util.Stack;
 import static android.app.ActionBar.Tab;
 
 /**
- * Created by ludwang on 14-1-11.
+ * Created by Jun Wang on 14-1-11.
  */
 public abstract class AbstractTabActivity extends Activity {
 

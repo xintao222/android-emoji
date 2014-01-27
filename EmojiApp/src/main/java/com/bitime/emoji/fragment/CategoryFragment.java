@@ -26,7 +26,7 @@ import static com.bitime.emoji.CategoryConfig.EmojiCategory;
 public class CategoryFragment extends Fragment {
 
     public interface OnCategorySelectedListener {
-        public void onCategorySelected(String category);
+        public void onCategorySelected(EmojiCategory category);
     }
 
     private OnCategorySelectedListener onCategorySelectedListener;
@@ -154,7 +154,7 @@ public class CategoryFragment extends Fragment {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
             EmojiCategory category = (EmojiCategory) adapterView.getItemAtPosition(i);
-            host.onCategorySelectedListener.onCategorySelected(category.name());
+            host.onCategorySelectedListener.onCategorySelected(category);
         }
     }
 }

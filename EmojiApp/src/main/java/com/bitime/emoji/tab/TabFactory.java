@@ -4,12 +4,12 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.view.View;
 
-import com.bitime.emoji.fragment.CategoryFragment;
 import com.bitime.emoji.Constants;
-import com.bitime.emoji.fragment.EmojiHistoryFragment;
-import com.bitime.emoji.fragment.LatestEmojiFragment;
 import com.bitime.emoji.MainActivity;
 import com.bitime.emoji.R;
+import com.bitime.emoji.fragment.CategoryFragment;
+import com.bitime.emoji.fragment.EmojiHistoryFragment;
+import com.bitime.emoji.fragment.LatestEmojiFragment;
 
 import static android.app.ActionBar.Tab;
 
@@ -29,7 +29,7 @@ public class TabFactory {
     }
 
     public Tab createCategoryTab() {
-        return createTab(tabView,
+        return createTab(
                 actionBar,
                 Constants.TabTags.CATEGORY,
                 R.drawable.ic_category,
@@ -38,7 +38,7 @@ public class TabFactory {
     }
 
     public Tab createHistoryTab() {
-        return createTab(tabView,
+        return createTab(
                 actionBar,
                 Constants.TabTags.HISTORY,
                 R.drawable.ic_favorite,
@@ -47,7 +47,7 @@ public class TabFactory {
     }
 
     public Tab createLatestTab() {
-        return createTab(tabView,
+        return createTab(
                 actionBar,
                 Constants.TabTags.LATEST,
                 R.drawable.ic_latest,
@@ -55,7 +55,7 @@ public class TabFactory {
                 LatestEmojiFragment.class);
     }
 
-    private <T extends Fragment> Tab createTab(View tabView, ActionBar actionBar, String tabTag,
+    private <T extends Fragment> Tab createTab(ActionBar actionBar, String tabTag,
                                                int iconId, String fragmentTag, Class<T> fragmentClass) {
         return actionBar.newTab()
                 .setIcon(iconId)

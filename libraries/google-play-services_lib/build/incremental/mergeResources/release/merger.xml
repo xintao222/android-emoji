@@ -2,11 +2,11 @@
 <merger>
 
     <dataSet config="main" >
-        <source path="/home/ludwang/AndroidStudioProjects/MyApplicationProject/libraries/google-play-services_lib/src/main/res" />
-        <source path="/home/ludwang/AndroidStudioProjects/MyApplicationProject/libraries/google-play-services_lib/build/res/rs/release" />
+        <source path="/home/ludwang/AndroidStudioProjects/emojiAppProject/libraries/google-play-services_lib/src/main/res" />
+        <source path="/home/ludwang/AndroidStudioProjects/emojiAppProject/libraries/google-play-services_lib/build/res/rs/release" />
     </dataSet>
     <dataSet config="release" >
-        <source path="/home/ludwang/AndroidStudioProjects/MyApplicationProject/libraries/google-play-services_lib/src/release/res" />
+        <source path="/home/ludwang/AndroidStudioProjects/emojiAppProject/libraries/google-play-services_lib/src/release/res" />
     </dataSet>
 
 </merger>
