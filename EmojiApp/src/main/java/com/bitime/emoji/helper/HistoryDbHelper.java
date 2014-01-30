@@ -12,7 +12,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.bitime.emoji.helper.EmojiHistory.EmojiHistoryEntry.*;
+import static com.bitime.emoji.helper.EmojiHistory.EmojiHistoryEntry.EMOJI_VALUE;
+import static com.bitime.emoji.helper.EmojiHistory.EmojiHistoryEntry.LATEST_DATE;
+import static com.bitime.emoji.helper.EmojiHistory.EmojiHistoryEntry.TABLE_NAME;
+import static com.bitime.emoji.helper.EmojiHistory.EmojiHistoryEntry.USED_COUNT;
+import static com.bitime.emoji.helper.EmojiHistory.EmojiHistoryEntry._ID;
 
 /**
  * 数据库的辅助类

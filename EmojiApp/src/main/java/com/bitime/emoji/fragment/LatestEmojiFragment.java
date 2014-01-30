@@ -1,5 +1,7 @@
 package com.bitime.emoji.fragment;
 
+import android.app.ActionBar;
+
 import com.bitime.emoji.R;
 import com.bitime.emoji.helper.HistoryDbHelper;
 import com.bitime.emoji.helper.PreferencesHelper;
@@ -19,7 +21,9 @@ public class LatestEmojiFragment extends AbstractEmojiListFragment {
 
     @Override
     public void onResume() {
-        getActivity().getActionBar().setTitle(getResources().getString(R.string.tab_latest));
+        ActionBar actionBar = getActivity().getActionBar();
+        actionBar.setTitle(getResources().getString(R.string.tab_latest));
+        actionBar.setSubtitle(null);
         super.onResume();
     }
 }

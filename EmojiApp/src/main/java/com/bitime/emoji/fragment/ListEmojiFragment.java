@@ -1,8 +1,8 @@
 package com.bitime.emoji.fragment;
 
+import android.app.ActionBar;
 import android.util.Log;
 
-import com.bitime.emoji.CategoryConfig;
 import com.bitime.emoji.R;
 
 import java.util.Arrays;
@@ -33,8 +33,9 @@ public class ListEmojiFragment extends AbstractEmojiListFragment {
 
     @Override
     public void onResume() {
-        getActivity().getActionBar().setTitle(getResources().getString(R.string.tab_category) + " | " +
-                getResources().getString(category.getNameResourceId()));
+        ActionBar actionBar = getActivity().getActionBar();
+        actionBar.setTitle(getResources().getString(R.string.tab_category));
+        actionBar.setSubtitle(getResources().getString(category.getNameResourceId()));
         super.onResume();
     }
 }

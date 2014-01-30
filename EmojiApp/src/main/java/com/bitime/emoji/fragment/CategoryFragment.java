@@ -1,5 +1,6 @@
 package com.bitime.emoji.fragment;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
@@ -12,16 +13,14 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-import com.bitime.emoji.CategoryConfig;
 import com.bitime.emoji.R;
 
 import static com.bitime.emoji.CategoryConfig.EmojiCategory;
 
 /**
- * Created by ludwang on 14-1-9.
+ * Created by Jun Wang on 14-1-9.
  */
 public class CategoryFragment extends Fragment {
 
@@ -36,12 +35,6 @@ public class CategoryFragment extends Fragment {
         View view = inflater.inflate(R.layout.activity_grid_view, container, false);
 
         GridView gridView = (GridView) view.findViewById(R.id.grid_view);
-
-        SimpleAdapter simpleAdapter = new SimpleAdapter(this.getActivity().getBaseContext(),
-                CategoryConfig.get2LineMap(getResources()),
-                R.layout.emoji_category_row,
-                new String[]{"First Line", "Second Line"},
-                new int[]{android.R.id.text1, android.R.id.text2});
         gridView.setAdapter(new EmojiCategoryAdapter(this.getActivity().getBaseContext()));
         gridView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         gridView.setOnItemClickListener(new ClickListener(this));
@@ -61,7 +54,10 @@ public class CategoryFragment extends Fragment {
 
     @Override
     public void onResume() {
-        getActivity().getActionBar().setTitle(getResources().getString(R.string.tab_category));
+        ActionBar actionBar = getActivity().getActionBar();
+        actionBar.setTitle(getResources().getString(R.string.tab_category));
+        actionBar.setLogo(getResources().getDrawable(R.drawable.logo));
+        actionBar.setSubtitle(null);
         super.onResume();
     }
 

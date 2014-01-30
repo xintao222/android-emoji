@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 
+import com.bitime.emoji.R;
+
+
 /**
  * App设置的activity
  * <p/>
@@ -21,6 +24,7 @@ public class SettingsActivity extends Activity {
                 .commit();
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setLogo(getResources().getDrawable(R.drawable.logo));
     }
 
     /**

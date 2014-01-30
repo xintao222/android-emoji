@@ -52,6 +52,7 @@ public abstract class AbstractEmojiListFragment extends Fragment {
             final String emoji = (String) adapterView.getItemAtPosition(i);
 
             updateCount(emoji);
+            PreferencesHelper.increaseTotalUsedTimes(getActivity().getBaseContext());
             if (PreferencesHelper.isSendAsClickBehavior(getActivity().getBaseContext())) {
                 MyNavigationUtils.displayMsgApp(fragment, emoji);
             } else {

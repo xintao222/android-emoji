@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Emoji</string>
-    <string name="app_name_full">Emoji by bitime</string>
+    <string name="app_name">Emoji Dictionary</string>
     <string name="setting_title">Setting</string>
     <string name="setting_behavior">Set behavior when click Emoji</string>
     <string name="setting_behavior_clip">Clip to clipboard</string>
@@ -21,7 +20,7 @@
     <string name="setting_notification_icon_summary">Show notification icon at status bar</string>
 
     <string name="setting_history_size">History size</string>
-    <string name="setting_history_size_summary">History size</string>
+    <string name="setting_history_size_summary">Set size of used emoji history</string>
 
     <string name="copied_toast_text">Copied!</string>
 
@@ -41,12 +40,25 @@
     <string name="category_shy">Shy</string>
     <string name="category_surprise">Surprise</string>
     <string name="category_angry">Angry</string>
+    <string name="category_friends">Friends</string>
     <string name="category_evil">Evil</string>
     <string name="category_doubt">Doubt</string>
+    <string name="category_animals">Animals</string>
+    <string name="category_table_flipping">Table Flipping</string>
+    <string name="category_dancing">Dancing</string>
+    <string name="category_kissing">Kissing</string>
+    <string name="category_excited">Excited</string>
     <string name="category_others">Others</string>
 
     <string name="tab_category">Category</string>
     <string name="tab_history">History</string>
     <string name="tab_latest">Latest</string>
+    <string name="category_winking">Winking</string>
+
+    <string name="notification_title" translatable="false">Emoji Dictionary</string>
+    <string name="notification_text">Press here start "Emoji Dictionary"</string>
+
+    <string name="rank_popup_message">If you like this app, please give me five star rank</string>
+    <string name="rank_popup_next_time">Next Time</string>
 
 </resources>

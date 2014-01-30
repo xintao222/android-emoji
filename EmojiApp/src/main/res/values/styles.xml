@@ -1,9 +1,8 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="bitime.emoji.Theme" parent="Theme.AppCompat.Light">
         <item name="android:windowBackground">@null</item>
-        <!-- Customize your theme here. -->
     </style>
 
 </resources>

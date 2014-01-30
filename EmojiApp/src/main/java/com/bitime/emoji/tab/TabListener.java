@@ -1,10 +1,8 @@
 package com.bitime.emoji.tab;
 
-import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.os.Build;
 
 import com.bitime.emoji.MainActivity;
 import com.bitime.emoji.R;
@@ -28,7 +26,6 @@ public class TabListener<T extends Fragment> implements ActionBar.TabListener {
     }
 
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     @Override
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
         Stack<String> backStack = mActivity.getBackStacks().get(tab.getTag());
@@ -42,7 +39,6 @@ public class TabListener<T extends Fragment> implements ActionBar.TabListener {
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     @Override
     public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
         // Select proper stack
@@ -59,7 +55,6 @@ public class TabListener<T extends Fragment> implements ActionBar.TabListener {
 
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void addFragment(ActionBar.Tab tab, Fragment fragment, FragmentTransaction ft) {
         // Select proper stack
         Stack<String> backStack = mActivity.getBackStacks().get(tab.getTag());

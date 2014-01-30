@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 
 import com.bitime.emoji.helper.PreferencesHelper;
 
@@ -41,5 +42,11 @@ public class MyNavigationUtils {
         intent.putExtra(Intent.EXTRA_TEXT, msg);
         intent.setType("text/plain");
         fragment.startActivity(intent);
+    }
+
+    public static void gotoMarket(Activity activity) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("market://details?id=com.bitime.emoji"));
+        activity.startActivity(intent);
     }
 }

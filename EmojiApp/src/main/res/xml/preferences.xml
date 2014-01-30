@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
     <ListPreference
         android:key="click_behavior"
         android:title="@string/setting_behavior"
@@ -35,6 +37,11 @@
         android:title="@string/setting_history_size"
         android:summary="@string/setting_history_size_summary"
         android:defaultValue="20"
+        />
+
+    <Preference
+        android:title="Rank our app"
+        android:key="ranking_in_setting"
         />
 
 </PreferenceScreen>

@@ -1,10 +1,8 @@
 package com.bitime.emoji.tab;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.os.Build;
 import android.os.Bundle;
 
 import java.util.HashMap;
@@ -41,7 +39,6 @@ public abstract class AbstractTabActivity extends Activity {
     }
 
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     @Override
     protected void onResume() {
         super.onResume();
@@ -59,7 +56,6 @@ public abstract class AbstractTabActivity extends Activity {
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     @Override
     protected void onPause() {
         super.onPause();
@@ -117,7 +113,6 @@ public abstract class AbstractTabActivity extends Activity {
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showFragment(Stack<String> backStack, FragmentTransaction ft) {
         // Peek topmost fragment from the stack
         String tag = backStack.peek();

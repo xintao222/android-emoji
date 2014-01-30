@@ -1,6 +1,5 @@
 package com.bitime.emoji;
 
-import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.Notification;
@@ -8,7 +7,6 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.view.Menu;
@@ -18,6 +16,7 @@ import android.widget.Toast;
 
 import com.bitime.emoji.fragment.CategoryFragment;
 import com.bitime.emoji.fragment.ListEmojiFragment;
+import com.bitime.emoji.fragment.RankPopupDialogFragment;
 import com.bitime.emoji.helper.HistoryDbHelper;
 import com.bitime.emoji.helper.PreferencesHelper;
 import com.bitime.emoji.setting.SettingsActivity;
@@ -33,7 +32,6 @@ import static com.bitime.emoji.CategoryConfig.EmojiCategory;
 import static com.bitime.emoji.Constants.FragmentTags;
 import static com.bitime.emoji.Constants.TabTags;
 
-@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MainActivity extends AbstractTabActivity implements CategoryFragment.OnCategorySelectedListener {
     private AdView mAdView;
 
@@ -57,19 +55,20 @@ public class MainActivity extends AbstractTabActivity implements CategoryFragmen
         actionBar.addTab(tabFactory.createLatestTab());
 
         mAdView = (AdView) findViewById(R.id.adView);
-        mAdView.loadAd(getAdRequestBuilder().build());
+        AdRequest adRequest = getAdRequestBuilder().build();
+        mAdView.loadAd(adRequest);
+        new RankPopupDialogFragment(this).show();
 
     }
-
 
     private void setNotification() {
         if (!PreferencesHelper.isShowNotification(getBaseContext())) {
             return;
         }
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.drawable.ic_launcher)
-                .setContentTitle("Jun Wang")
-                .setContentText("Hello World!");
+                .setSmallIcon(R.drawable.notification)
+                .setContentTitle(getResources().getString(R.string.notification_title))
+                .setContentText(getResources().getString(R.string.notification_text));
         // Creates an explicit intent for an Activity in your app
         Intent resultIntent = new Intent(this, MainActivity.class);
         mBuilder.setContentIntent(PendingIntent.getActivity(getBaseContext(), 1, resultIntent, PendingIntent.FLAG_CANCEL_CURRENT));
@@ -112,7 +111,6 @@ public class MainActivity extends AbstractTabActivity implements CategoryFragmen
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     @Override
     public void onCategorySelected(EmojiCategory category) {
         Fragment categoryFragment = getFragmentManager().findFragmentByTag(FragmentTags.CATEGORY);

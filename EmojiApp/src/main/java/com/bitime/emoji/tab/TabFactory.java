@@ -2,7 +2,6 @@ package com.bitime.emoji.tab;
 
 import android.app.ActionBar;
 import android.app.Fragment;
-import android.view.View;
 
 import com.bitime.emoji.Constants;
 import com.bitime.emoji.MainActivity;
@@ -19,12 +18,10 @@ import static android.app.ActionBar.Tab;
 public class TabFactory {
 
     private MainActivity activity;
-    private View tabView;
     private ActionBar actionBar;
 
     public TabFactory(MainActivity activity) {
         this.activity = activity;
-        this.tabView = activity.findViewById(R.id.tab_view);
         this.actionBar = activity.getActionBar();
     }
 

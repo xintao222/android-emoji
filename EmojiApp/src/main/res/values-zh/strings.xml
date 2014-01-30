@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">颜文字</string>
-    <string name="app_name_full">颜文字 by bitime</string>
     <string name="setting_title">设置</string>
     <string name="setting_behavior">设置点击表情时的动作</string>
     <string name="setting_behavior_clip">复制到粘帖板</string>
@@ -30,4 +29,28 @@
     <string name="tab_category">分类</string>
     <string name="tab_history">最常使用</string>
     <string name="tab_latest">最近使用</string>
+
+    <string name="notification_text">点击启动"Emoji Dictionary"</string>
+
+    <string name="setting_hidden_app_title">隐藏App</string>
+    <string name="setting_hidden_app_summary">复制成功后隐藏App</string>
+    <string name="setting_copy_tip_title">弹出提示</string>
+    <string name="setting_copy_tip_summary">复制成功后弹出提示</string>
+
+    <string name="setting_notification_icon_title">通知栏图标</string>
+    <string name="setting_notification_icon_summary">在通知栏显示App图标</string>
+
+    <string name="setting_history_size">历史记录数量</string>
+    <string name="setting_history_size_summary">设置历史记录的数量</string>
+
+    <string name="category_animals">动物</string>
+    <string name="category_table_flipping">掀桌子</string>
+    <string name="category_dancing">跳舞</string>
+    <string name="category_kissing">吻</string>
+    <string name="category_winking">眨眼</string>
+    <string name="category_excited">兴奋</string>
+    <string name="category_friends">朋友</string>
+
+    <string name="rank_popup_message">如果觉得我们做的不错，请帮忙给我们评价一下吧。</string>
+    <string name="rank_popup_next_time">下次再说</string>
 </resources>

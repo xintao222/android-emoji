@@ -1,16 +1,15 @@
 package com.bitime.emoji.setting;
 
-import android.annotation.TargetApi;
-import android.os.Build;
 import android.os.Bundle;
+import android.preference.Preference;
 import android.preference.PreferenceFragment;
 
+import com.bitime.emoji.MyNavigationUtils;
 import com.bitime.emoji.R;
 
 /**
- * Created by ludwang on 14-1-1.
+ * Created by Jun Wang on 14-1-1.
  */
-@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class SettingsFragment extends PreferenceFragment {
 
     @Override
@@ -19,5 +18,14 @@ public class SettingsFragment extends PreferenceFragment {
 
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.preferences);
+
+        Preference button = findPreference("ranking_in_setting");
+        button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference arg0) {
+                MyNavigationUtils.gotoMarket(getActivity());
+                return true;
+            }
+        });
     }
 }
