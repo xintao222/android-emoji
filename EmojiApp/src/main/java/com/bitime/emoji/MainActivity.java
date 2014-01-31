@@ -134,7 +134,6 @@ public class MainActivity extends AbstractTabActivity implements CategoryFragmen
     public void onPause() {
         // Pause the AdView.
         mAdView.pause();
-
         super.onPause();
     }
 

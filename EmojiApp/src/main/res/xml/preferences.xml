@@ -40,7 +40,7 @@
         />
 
     <Preference
-        android:title="Rank our app"
+        android:title="@string/rank_popup_title"
         android:key="ranking_in_setting"
         />
 

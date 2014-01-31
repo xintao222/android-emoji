@@ -58,6 +58,7 @@
     <string name="notification_title" translatable="false">Emoji Dictionary</string>
     <string name="notification_text">Press here start "Emoji Dictionary"</string>
 
+    <string name="rank_popup_title">Please rank our app at google market</string>
     <string name="rank_popup_message">If you like this app, please give me five star rank</string>
     <string name="rank_popup_next_time">Next Time</string>
 

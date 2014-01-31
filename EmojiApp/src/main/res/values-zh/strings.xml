@@ -51,6 +51,7 @@
     <string name="category_excited">兴奋</string>
     <string name="category_friends">朋友</string>
 
+    <string name="rank_popup_title">请给我们的应用评分</string>
     <string name="rank_popup_message">如果觉得我们做的不错，请帮忙给我们评价一下吧。</string>
     <string name="rank_popup_next_time">下次再说</string>
 </resources>

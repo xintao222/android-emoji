@@ -120,4 +120,12 @@ public abstract class AbstractTabActivity extends Activity {
         // and attach it
         ft.attach(fragment);
     }
+
+    @Override
+    protected void onDestroy() {
+        for (Stack<String> stack : backStacks.values()) {
+            stack.clear();
+        }
+        super.onDestroy();
+    }
 }
