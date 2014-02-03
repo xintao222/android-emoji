@@ -20,7 +20,7 @@
     <string name="category_cry">哭</string>
     <string name="category_helpless">无助</string>
     <string name="category_shy">害羞</string>
-    <string name="category_surprise">惊喜</string>
+    <string name="category_surprise">惊讶</string>
     <string name="category_angry">愤怒</string>
     <string name="category_evil">猥琐</string>
     <string name="category_doubt">疑问</string>
@@ -32,13 +32,13 @@
 
     <string name="notification_text">点击启动"Emoji Dictionary"</string>
 
-    <string name="setting_hidden_app_title">隐藏App</string>
-    <string name="setting_hidden_app_summary">复制成功后隐藏App</string>
+    <string name="setting_hidden_app_title">隐藏应用</string>
+    <string name="setting_hidden_app_summary">复制成功后隐藏应用</string>
     <string name="setting_copy_tip_title">弹出提示</string>
     <string name="setting_copy_tip_summary">复制成功后弹出提示</string>
 
     <string name="setting_notification_icon_title">通知栏图标</string>
-    <string name="setting_notification_icon_summary">在通知栏显示App图标</string>
+    <string name="setting_notification_icon_summary">在通知栏显示应用图标</string>
 
     <string name="setting_history_size">历史记录数量</string>
     <string name="setting_history_size_summary">设置历史记录的数量</string>

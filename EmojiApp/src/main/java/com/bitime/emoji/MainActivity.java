@@ -7,6 +7,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.view.Menu;
@@ -81,7 +82,12 @@ public class MainActivity extends AbstractTabActivity implements CategoryFragmen
         // Create an ad request.
         AdRequest.Builder adRequestBuilder = new AdRequest.Builder();
         // Optionally populate the ad request builder.
-        adRequestBuilder.addTestDevice(getResources().getString(R.string.test_machine_id));
+        TypedArray array = getResources().obtainTypedArray(R.array.test_machine_ids);
+        for (int i = 0; i < array.length(); i++) {
+            String machine = array.getString(i);
+            adRequestBuilder.addTestDevice(machine);
+        }
+        array.recycle();
         return adRequestBuilder;
     }
 
