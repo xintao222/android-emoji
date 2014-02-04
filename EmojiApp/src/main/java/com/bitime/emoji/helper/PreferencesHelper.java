@@ -25,7 +25,7 @@ public class PreferencesHelper {
 
     public static boolean isSendAsClickBehavior(Context context) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-        String clickBehavior = sharedPref.getString(CLICK_BEHAVIOR, Constants.CLICK_BEHAVIOR_SEND);
+        String clickBehavior = sharedPref.getString(CLICK_BEHAVIOR, Constants.CLICK_BEHAVIOR_CLIP);
         return Constants.CLICK_BEHAVIOR_SEND.equals(clickBehavior);
     }
 

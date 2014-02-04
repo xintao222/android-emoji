@@ -382,6 +382,7 @@ public class CategoryConfig {
     };
 
     private static String[] tableFlippingList = {
+            "(╯‵□′)╯︵┴─┴",
             "┗[© ♒ ©]┛ ︵ ┻━┻",
             "ノ┬─┬ノ ︵ ( \\o°o)\\",
             "┻━┻ ︵ ლ(⌒-⌒ლ)",
@@ -397,7 +398,6 @@ public class CategoryConfig {
             "(/\"≡ _ ≡)/~┴┴",
             "(╯‵□′)╯︵┻━┻",
             "(┙>∧<)┙へ┻┻ ",
-            "(╯‵□′)╯︵┴─┴",
             "（╯－＿－）╯╧╧ ",
     };
 

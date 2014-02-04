@@ -10,9 +10,11 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.bitime.emoji.fragment.CategoryFragment;
@@ -23,6 +25,7 @@ import com.bitime.emoji.helper.PreferencesHelper;
 import com.bitime.emoji.setting.SettingsActivity;
 import com.bitime.emoji.tab.AbstractTabActivity;
 import com.bitime.emoji.tab.TabFactory;
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
@@ -45,7 +48,16 @@ public class MainActivity extends AbstractTabActivity implements CategoryFragmen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initActionBar();
+        loadAdView();
+        new RankPopupDialogFragment(this).show();
 
+    }
+
+    /**
+     * init action bar with navigation tab
+     */
+    private void initActionBar() {
         TabFactory tabFactory = new TabFactory(this);
         ActionBar actionBar = getActionBar();
 
@@ -54,12 +66,25 @@ public class MainActivity extends AbstractTabActivity implements CategoryFragmen
         actionBar.addTab(tabFactory.createCategoryTab());
         actionBar.addTab(tabFactory.createHistoryTab());
         actionBar.addTab(tabFactory.createLatestTab());
+    }
 
+    /**
+     * try to load admob view, if load failed then hidden admob view
+     */
+    private void loadAdView() {
         mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = getAdRequestBuilder().build();
-        mAdView.loadAd(adRequest);
-        new RankPopupDialogFragment(this).show();
+        mAdView.setAdListener(new AdListener() {
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                mAdView.setVisibility(View.GONE);
+                Log.i(this.getClass().getSimpleName(), "load ads failed");
+                super.onAdFailedToLoad(errorCode);
+            }
 
+        });
+
+        mAdView.loadAd(adRequest);
     }
 
     private void setNotification() {

@@ -7,7 +7,7 @@
     <string name="setting_behavior_clip">Clip to clipboard</string>
     <string name="setting_behavior_clip_value" translatable="false">CLIP</string>
 
-    <string name="setting_behavior_send">Send directly</string>
+    <string name="setting_behavior_send">Send text message directly</string>
     <string name="setting_behavior_send_value" translatable="false">SEND</string>
 
     <string name="setting_hidden_app_title">Hidden APP</string>
@@ -47,15 +47,15 @@
     <string name="category_dancing">Dancing</string>
     <string name="category_kissing">Kissing</string>
     <string name="category_excited">Excited</string>
+    <string name="category_winking">Winking</string>
     <string name="category_others">Others</string>
 
     <string name="tab_category">Category</string>
-    <string name="tab_history">History</string>
-    <string name="tab_latest">Latest</string>
-    <string name="category_winking">Winking</string>
+    <string name="tab_history">Most Frequently Used</string>
+    <string name="tab_latest">Latest Used</string>
 
     <string name="notification_title" translatable="false">Emoji Dictionary</string>
-    <string name="notification_text">Press here start "Emoji Dictionary"</string>
+    <string name="notification_text">Press here to start "Emoji Dictionary"</string>
 
     <string name="rank_popup_title">Please rank our app at google market</string>
     <string name="rank_popup_message">If you like this app, please give me five star rank</string>
