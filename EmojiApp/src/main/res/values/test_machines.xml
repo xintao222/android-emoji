@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="test_machine_ids">
+        <item>FCA35BE16BC430A8FFA13D0F90FE18A7</item>
+        <item>B3EEABB8EE11C2BE770B684D95219ECB</item>
+        <item>7EAE829D37F07E13C2357DFD75342F2C</item>
+    </array>
+</resources>

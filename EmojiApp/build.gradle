@@ -28,6 +28,21 @@ android {
     sourceSets {
         instrumentTest.setRoot('src/test')
     }
+
+    signingConfigs {
+        release {
+            storeFile file("/home/ludwang/AndroidStudioProjects/keystore/bitime.jks")
+            storePassword "Nepia1986"
+            keyAlias "bitime"
+            keyPassword "Nepia1986"
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
 }
 
 dependencies {
